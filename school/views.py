@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+
+from .models import Instrument, InstrumentType
 
 def index(request):
-    return HttpResponse("Aaaah.")
+    return render(request, 'index.html', {'title': 'dhjksad'})
+    #return HttpResponse("Aaaah.")
