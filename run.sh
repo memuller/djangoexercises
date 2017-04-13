@@ -2,6 +2,16 @@
 
 manage='python manage.py'
 
+if [ "$1" = '-h' ] || [ "$1" = '--help' ] || [ "$1" = 'help' ]; then
+  echo "Runs common django scripts, so you don't neet to memorize their weird syntax."
+  echo "Usage:     ./run.sh \$command \$arg"
+  echo "           defaults to start if no command given."
+  echo "Commands:"
+  echo "start      start the server at 127.0.0.1:8000 or at 127.0.0.1:\$arg"
+  echo "update     updates migrations"
+  echo "migrate    updates, then run migrations"
+fi
+
 # Runs the damn dev server
 if [ $# -eq 0 ]; then
   $manage runserver
