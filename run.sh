@@ -29,4 +29,8 @@ elif [ "$1" = 'update' ]; then
 elif [ "$1" = 'migrate' ]; then
   ./$(basename $0) update
   $manage migrate
+
+# Setup admin
+elif [ "$1" = 'setup' ]; then
+  $manage createsuperuser
 fi
